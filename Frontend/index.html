@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Dischi</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <div id="app">
+
+        <header>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/26/Spotify_logo_with_text.svg" alt="Spotify logo" class="logo">
+        </header>
+
+        <h1>Lista Dischi</h1>
+
+        <div class="albums-container">
+            <div class="album" v-for="album in albumsData" :key="album.title">
+                <img :src="album.poster" :alt="album.title">
+                <h3>{{ album.title }}</h3>
+                <p>{{ album.author }}</p>
+                <p>{{ album.year }}</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/script.js"></script>
+</body>
+</html>
+
